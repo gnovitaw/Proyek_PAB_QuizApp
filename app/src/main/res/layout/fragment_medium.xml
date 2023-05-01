@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="quizmedium"
+            type="com.example.quizproject.ui.medium.MediumFragment" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#FFFFFF"
+        >
+
+        <ImageView
+            style="@style/ImageStyle"
+            android:layout_width="match_parent"
+            android:layout_height="114dp"
+            android:src="@drawable/covermedium">
+
+        </ImageView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/MediumTextStyle"
+            tools:text="Question?"
+            android:text="@{quizmedium.currentQuestion.theQuestion}"
+
+            />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/AnswerTextStyle"
+                    android:id="@+id/option1"
+                    tools:text="Option1"
+                    android:text="@{quizmedium.answers[0]}"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/AnswerTextStyle"
+                    android:id="@+id/option2"
+                    tools:text="Option1"
+                    android:text="@{quizmedium.answers[1]}"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/AnswerTextStyle"
+                    android:id="@+id/option3"
+                    tools:text="Option1"
+                    android:text="@{quizmedium.answers[2]}"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/AnswerTextStyle"
+                    android:id="@+id/option4"
+                    tools:text="Option1"
+                    android:text="@{quizmedium.answers[3]}"
+                    />
+
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+</layout>

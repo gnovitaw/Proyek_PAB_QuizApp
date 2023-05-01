@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="userprofile"
+            type="com.example.quizproject.ui.profile.ProfileFragment" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/userimage"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/profile"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/btn_logout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="32dp"
+            android:background="#FF1744"
+            android:text="Klik garis 3 di pojok kiri atas untuk melihat menu"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/txt_name"
+            android:text="@{userprofile.user.displayName}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/userimage"
+            style="@style/TextBoxStyle"
+            />
+
+        <TextView
+            android:id="@+id/txt_email"
+            style="@style/TextBoxStyle"
+            android:text="@{userprofile.user.email}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_name"
+            />
+        <TextView
+            android:id="@+id/txt_phone"
+            style="@style/TextBoxStyle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_email"
+            tools:text="@{userprofile.user.phoneNumber}" />
+
+        <TextView
+            android:id="@+id/textView"
+            style="@style/TextBoxStyle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/txt_phone"
+            android:text="Easy"
+            />
+
+        <TextView
+            android:id="@+id/txt_hs_easy"
+            style="@style/ScoreStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            tools:text="@{userprofile.highestScoreEasy}" />
+
+        <TextView
+            android:id="@+id/textView2"
+            style="@style/TextBoxStyle"
+            android:text="Medium"
+            app:layout_constraintBottom_toBottomOf="@+id/txt_hs_easy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/txt_hs_medium"
+            style="@style/ScoreStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/textView2"
+            tools:text="@{userprofile.highestScoreMedium}" />
+
+        <TextView
+            android:id="@+id/textView3"
+            style="@style/TextBoxStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/txt_hs_medium"
+            android:text="Hard"
+            />
+
+        <TextView
+            android:id="@+id/txt_hs_hard"
+            style="@style/ScoreStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/textView3"
+            tools:text="@{userprofile.highestScoreHard}" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

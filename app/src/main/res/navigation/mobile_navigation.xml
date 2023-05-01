@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/nav_profile">
+
+<!--Easy-->
+    <fragment
+        android:id="@+id/titleeasyFragment"
+        android:name="com.example.quizproject.ui.easy.EasyTitleFragment"
+        android:label="Quiz Level: Easy">
+        <action
+            android:id="@+id/action_titleeasyFragment_to_quizeasyFragment"
+            app:destination="@id/nav_easy" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_easy"
+        android:name="com.example.quizproject.ui.easy.EasyFragment"
+        android:label="Quiz Level: Easy">
+        <action
+            android:id="@+id/action_quizeasyFragment_to_quizeasyWonFragment"
+            app:destination="@id/quizEasyWonFragment"
+            app:popUpTo="@id/nav_easy"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_quizeasyFragment_to_quizeasyLostFragment"
+            app:destination="@id/quizEasyLostFragment"
+            app:popUpTo="@id/nav_easy"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/quizEasyWonFragment"
+        android:name="com.example.quizproject.ui.easy.EasyWon"
+        android:label="Won Quiz">
+        <action
+            android:id="@+id/action_quizeasyWonFragment_to_titleeasyFragment"
+            app:destination="@id/titleeasyFragment"
+            app:popUpTo="@+id/titleeasyFragment" />
+        <argument
+            android:name="score"
+            app:argType="integer" />
+        <argument
+            android:name="wrong"
+            app:argType="string[]" />
+    </fragment>
+    <fragment
+        android:id="@+id/quizEasyLostFragment"
+        android:name="com.example.quizproject.ui.easy.EasyLost"
+        android:label="Lost Quiz">
+        <action
+            android:id="@+id/action_quizeasyLostFragment_to_titleeasyFragment"
+            app:destination="@id/titleeasyFragment"
+            app:popUpTo="@+id/titleeasyFragment" />
+        <argument
+            android:name="score"
+            app:argType="integer" />
+        <argument
+            android:name="wrong"
+            app:argType="string[]" />
+    </fragment>
+
+
+<!--Hard-->
+    <fragment
+        android:id="@+id/titlehardFragment"
+        android:name="com.example.quizproject.ui.hard.HardTitleFragment"
+        android:label="Quiz Level: Hard" >
+        <action
+            android:id="@+id/action_titlehardFragment_to_quizhardFragment"
+            app:destination="@id/nav_hard" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_hard"
+        android:name="com.example.quizproject.ui.hard.HardFragment"
+        android:label="Quiz Level: Hard" >
+        <action
+            android:id="@+id/action_quizhardFragment_to_quizhardWonFragment"
+            app:destination="@id/quizHardWonFragment"
+            app:popUpTo="@id/nav_hard"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_quizhardFragment_to_quizhardLostFragment"
+            app:destination="@id/quizHardLostFragment"
+            app:popUpTo="@id/nav_hard"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/quizHardWonFragment"
+        android:name="com.example.quizproject.ui.hard.HardWon"
+        android:label="Won Quiz" >
+        <action
+            android:id="@+id/action_quizhardWonFragment_to_titlehardFragment"
+            app:destination="@id/titlehardFragment"
+            app:popUpTo="@+id/titlehardFragment"/>
+        <argument
+            android:name="score"
+            app:argType="integer" />
+        <argument
+            android:name="wrong"
+            app:argType="string[]" />
+    </fragment>
+    <fragment
+        android:id="@+id/quizHardLostFragment"
+        android:name="com.example.quizproject.ui.hard.HardLost"
+        android:label="Lost Quiz" >
+        <action
+            android:id="@+id/action_quizhardLostFragment_to_titlehardFragment"
+            app:destination="@id/titlehardFragment"
+            app:popUpTo="@+id/titlehardFragment" />
+        <argument
+            android:name="score"
+            app:argType="integer" />
+        <argument
+            android:name="wrong"
+            app:argType="string[]" />
+    </fragment>
+
+<!--Medium-->
+    <fragment
+        android:id="@+id/titlemediumFragment"
+        android:name="com.example.quizproject.ui.medium.MediumTitleFragment"
+        android:label="Quiz Level: Medium" >
+        <action
+            android:id="@+id/action_titlemediumFragment_to_quizmediumFragment"
+            app:destination="@id/nav_medium"
+            app:popUpTo="@id/nav_medium" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_medium"
+        android:name="com.example.quizproject.ui.medium.MediumFragment"
+        android:label="Quiz Level: Medium" >
+        <action
+            android:id="@+id/action_quizmediumFragment_to_quizmediumWonFragment"
+            app:destination="@id/quizMediumWonFragment"
+            app:popUpTo="@id/quizMediumWonFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_quizmediumFragment_to_quizmediumLostFragment"
+            app:destination="@id/quizMediumLostFragment"
+            app:popUpTo="@id/quizMediumLostFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/quizMediumWonFragment"
+        android:name="com.example.quizproject.ui.medium.MediumWon"
+        android:label="Won Quiz" >
+        <action
+            android:id="@+id/action_quizmediumWonFragment_to_titlemediumFragment"
+            app:destination="@id/titlemediumFragment"
+            app:popUpTo="@id/quizMediumWonFragment" />
+        <argument
+            android:name="score"
+            app:argType="integer" />
+        <argument
+            android:name="wrong"
+            app:argType="string[]" />
+    </fragment>
+    <fragment
+        android:id="@+id/quizMediumLostFragment"
+        android:name="com.example.quizproject.ui.medium.MediumLost"
+        android:label="Lost Quiz" >
+        <action
+            android:id="@+id/action_quizmediumLostFragment_to_titlemediumFragment"
+            app:destination="@id/titlemediumFragment"
+            app:popUpTo="@id/quizMediumLostFragment" />
+        <argument
+            android:name="score"
+            app:argType="integer"/>
+        <argument
+            android:name="wrong"
+            app:argType="string[]" />
+    </fragment>
+
+
+<!--drawer profile-->
+    <fragment
+        android:id="@+id/nav_profile"
+        android:name="com.example.quizproject.ui.profile.ProfileFragment"
+        android:label="My Profile"
+        tools:layout="@layout/fragment_profile" />
+
+</navigation>
